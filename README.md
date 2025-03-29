@@ -18,11 +18,15 @@ El acceso a internet es una herramienta clave para la comunicación y el interca
 
 ## 📂 Estructura del Proyecto
 
-- 📁 [**data/**](./data) → Contiene los datasets utilizados en el análisis.
-- 📓 [**notebooks/**](./notebooks) → Contiene los Jupyter Notebooks con el proceso de ETL y análisis exploratorio.
-- 📝 [**scripts/**](./scripts) → Contiene los scripts Python para la transformación y limpieza de datos.
-- ⚙️ [**config/**](./config) → Contiene archivos de configuración del proyecto.
-- 📄 [**docs/**](./docs) → Documentación del proyecto.
+```
+📂 [data](data/)
+ ├── 📁 [processed](data/processed/)   <- Datasets procesados.
+ ├── 📁 [raw](data/raw/)        <- Datasets originales.
+📂 [extract](extract/)        <- Archivos para la etapa de extracción.
+📂 [load](load/)           <- Archivos para la etapa de carga.
+📂 [transform](transform/)      <- rchivos para la etapa de transformación.
+📄 [pipeline.py](pipeline.py)    <- Pipeline, punto de entrada para la ejecución.
+```
 
 ## 📊 Identificación Inicial de Fuentes
 
