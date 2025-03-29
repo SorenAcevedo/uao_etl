@@ -16,17 +16,18 @@ Este proyecto tiene como objetivo analizar la relación entre la cobertura de in
 ### 🎯 Justificación del proyecto:
 El acceso a internet es una herramienta clave para la comunicación y el intercambio de información científica. Sin embargo, la desigualdad en la cobertura de internet puede limitar las oportunidades de los investigadores en regiones con menor acceso. Analizar esta relación permitirá identificar áreas que podrían beneficiarse de inversiones en infraestructura de internet, promoviendo así un desarrollo científico más equitativo en todo el país.
 
-## 📂 Estructura del Proyecto
+## 📂 Estructura del Proyecto  
 
-```
-📂 [data](data/)
- ├── 📁 [processed](data/processed/)   <- Datasets procesados.
- ├── 📁 [raw](data/raw/)        <- Datasets originales.
-📂 [extract](extract/)        <- Archivos para la etapa de extracción.
-📂 [load](load/)           <- Archivos para la etapa de carga.
-📂 [transform](transform/)      <- rchivos para la etapa de transformación.
-📄 [pipeline.py](pipeline.py)    <- Pipeline, punto de entrada para la ejecución.
-```
+📁 **[data](data/)**  
+&nbsp;&nbsp;&nbsp;&nbsp;📂 **[processed](data/processed/)** – Datos finales y listos para modelado.  
+&nbsp;&nbsp;&nbsp;&nbsp;📂 **[raw](data/raw/)** – Datos originales sin modificaciones.  
+
+📁 **[extract](extract/)** – Archivos necesarios para la extracción de datos.  
+📁 **[load](load/)** – Archivos para la carga de datos.  
+📁 **[transform](transform/)** – Archivos para la transformación y limpieza de datos.  
+
+📄 **[pipeline.py](pipeline.py)** – Script principal para la ejecución del pipeline ETL.  
+
 
 ## 📊 Identificación Inicial de Fuentes
 
