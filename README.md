@@ -18,13 +18,19 @@ El acceso a internet es una herramienta clave para la comunicación y el interca
 
 ## 📂 Estructura del Proyecto  
 
-📁 **[data](data/)**  
-&nbsp;&nbsp;&nbsp;&nbsp;📂 **[processed](data/processed/)** – Datos finales y listos para modelado.  
-&nbsp;&nbsp;&nbsp;&nbsp;📂 **[raw](data/raw/)** – Datos originales sin modificaciones.  
-📁 **[extract](extract/)** – Archivos necesarios para la extracción de datos.  
-📁 **[load](load/)** – Archivos para la carga de datos.  
-📁 **[transform](transform/)** – Archivos para la transformación y limpieza de datos.  
-📄 **[pipeline.py](pipeline.py)** – Script principal para la ejecución del pipeline ETL.  
+```
+uao_etl/
+│── 📄 pipeline.py           # Script principal del pipeline ETL
+│── 📂 data/                 # Datos del proyecto
+│   ├── 📂 raw/              # Datos en bruto sin procesar
+│   ├── 📂 processed/        # Datos transformados
+│── 📂 extract/              # Módulos de extracción de datosrevistas y grupos
+│── 📂 transform/            # Módulos de transformación de datos
+│── 📂 load/                 # Módulos de carga de datos
+│── 📂 config/               # Configuración
+│── 📂 logs/                # Logs del proceso ETL
+
+```
 
 
 ## 📊 Identificación Inicial de Fuentes
