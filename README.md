@@ -126,27 +126,19 @@ df_revistas.loc[df_revistas['DEP_REV_IN'].str.contains('bogota', case=False, na=
 
 ## 3. Integración de Datos
 
-Para permitir la análisis conjunto de estos datos, se unieron los distintos datasets utilizando claves comunes:
+Se incluyeron dos tablas adicionales al modelo de datos:
+- **Dimensión de ubicación**: Especifica los códigos de los municipios, los departamentos a los que pertenecen y el nombre de los municipios.
+- **Relación con otras tablas**: En las tablas de salida de los cuatro datasets, la columna `COD_MUNICIPIO` se usará para enlazarlas con la tabla de la dimensión de municipios, lo que facilitará consultas y análisis detallados.
 
-```python
-df_final = df_fijo.merge(df_movil, on=['COD_DEPARTAMENTO', 'COD MUNICIPIO'], how='inner')
-df_final = df_final.merge(df_revistas, on=['COD_DEPARTAMENTO'], how='left')
-df_final = df_final.merge(df_grupos, on=['COD_DEPARTAMENTO'], how='left')
-```
+También se incluyó una **dimensión de tiempo**, en la que se especifica el momento en el que ocurrieron los hechos. Se utilizará una combinación de **año y trimestre** para establecer las relaciones en el modelo de datos.
+
 
 **Explicación de la estrategia de uniones:**
 - Se usó una `inner join` entre la cobertura fija y móvil, ya que se necesitaba trabajar con municipios presentes en ambas bases.
 - Se usó `left join` con revistas indexadas y grupos de investigación para no perder información de internet en municipios donde no hubiera registros en estas tablas.
 
----
 
-## 4. Exportación de Datos Procesados
-
-Una vez que los datos han sido limpiados y transformados, se exportan a un nuevo archivo CSV que servirá como insumo para análisis posteriores.
-
-```python
-df_final.to_csv("datos_procesados.csv", index=False)
-```
+Finalmente, se tiene la intención de **usar Power BI** para presentar los datos. Para ello, se cargarán las **seis tablas (cuatro de hechos y dos dimensiones)** y, en la pestaña del **modelo semántico**, se establecerán las relaciones correspondientes para facilitar el análisis.
 
 ---
 
