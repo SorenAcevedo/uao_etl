@@ -131,7 +131,7 @@ Se incluyeron dos tablas adicionales al modelo de datos:
 - **Relación con otras tablas**: En las tablas de salida de los cuatro datasets, la columna `COD_MUNICIPIO` se usará para enlazarlas con la tabla de la dimensión de municipios, lo que facilitará consultas y análisis detallados.
 -**Dimensión de tiempo**, en la que se especifica el momento en el que ocurrieron los hechos. Se utilizará una combinación de **año y trimestre** para establecer las relaciones en el modelo de datos.
 
-## Agregar documentación sobre lo que se haga en Power BI Aqupi
+## ******¡¡¡¡¡Agregar documentación sobre lo que se haga en Power BI Aquí!!!!*****
 
 
 Finalmente, se tiene la intención de **usar Power BI** para presentar los datos. Para ello, se cargarán las **seis tablas (cuatro de hechos y dos dimensiones)** y, en la pestaña del **modelo semántico**, se establecerán las relaciones correspondientes para facilitar el análisis.
