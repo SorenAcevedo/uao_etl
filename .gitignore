@@ -19,6 +19,7 @@ lib64/
 parts/
 sdist/
 var/
+data/processed
 wheels/
 share/python-wheels/
 *.egg-info/
@@ -172,3 +173,5 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+data/raw/internet_fijo.csv
