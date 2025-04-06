@@ -151,9 +151,76 @@ Finalmente, se tiene la intención de **usar Power BI** para presentar los datos
 - Desarrollo de modelos predictivos basados en estos datos para analizar el impacto de la conectividad en la investigación científica.
 
 ---
+## Proyecto ETL - Ejecución Local (Windows)
+
+Este proyecto ejecuta un pipeline ETL (Extracción, Transformación, Carga) sobre múltiples datasets, generando logs por cada uno y salidas versionadas.
+
+---
+
+### 🛠️ Requisitos
+
+- Python 3.8 o superior
+- Git (opcional, para clonar)
+- Terminal (CMD, PowerShell o VSCode)
+
+---
+
+### 🚀 Pasos para ejecutar en local (Windows)
+
+#### 1. Clona o descarga el repositorio
+```bash
+git clone https://github.com/tu_usuario/tu_repo.git
+cd tu_repo
+```
+
+#### 2. Crea un entorno virtual
+```bash
+python -m venv venv
+```
+
+#### 3. Activa el entorno virtual
+```bash
+venv\Scripts\activate
+```
+
+#### 4. Instala las dependencias
+```bash
+pip install -r requirements.txt
+```
+
+#### 5. Ejecuta el pipeline ETL
+```bash
+python pipeline.py
+```
+
+---
+
+### 📁 Salidas
+
+- Los archivos transformados se guardan en: `data/processed/`
+- Los logs de cada dataset están en: `logs/`
+
+---
+
+### ✅ Ejemplo de salida
+
+```text
+Resumen de ejecución ETL:
+- internet_fijo: Éxito
+- telefonia_movil: Éxito
+- revistas_indexadas: Éxito
+- grupos_investigacion: Éxito
+```
+
+---
+
+### 🧹 Para desactivar el entorno virtual
+
+```bash
+deactivate
+```
 
 ## 📜 Licencia
 Este proyecto está licenciado bajo la licencia **Creative Commons** (CC BY 4.0). Puedes compartir y adaptar el contenido, siempre que se otorgue el crédito correspondiente. 
 
 [![Licencia CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
-
