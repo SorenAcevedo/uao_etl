@@ -188,6 +188,27 @@ Para relacionar nuestras funetes de datos, creamos un modelo semántico en el qu
 
 ![Modelo semántico](assets/modelo_semantico.jpeg)
 
+Tambipen presentamos algunas capturas de las pestañas incluidas en nuestro reporte:
+
+- Compoartamiento de la cobertura de internet fijo a través del tiempo:
+  
+![Internet_fijo_tiempo](assets/internet_fijo_tiempo.jpeg)
+
+- Compoartamiento de la cobertura de internet movil a través del tiempo:
+
+![Internet_movil_tiempo](assets/Internet_movil_tiempo.jpeg)
+
+- Cantidad de revistas indexadas a través del tiempo:
+
+![revistas indexadas_tiempo](assets/revistas_indexadas_tiempo.jpeg)
+
+- Cantidad de grupos de investigación científica a través del tiempo:
+
+![grupos investigación_tiempo](assets/grupos_investigacion_tiempo.jpeg)
+
+- Cobertura de internet y su relación con la producción científica:
+
+![Internet_prod_cientifica](assets/Internet_prod_cientifica.jpeg)
 
 **Análisis de los resultados**
 
