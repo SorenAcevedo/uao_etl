@@ -134,11 +134,51 @@ Se incluyeron dos tablas adicionales al modelo de datos:
 ## 4. Méjoras al código de ETL
 
 ### a) Logs
+
 Con el motivo de dejar registros de la ejecución de nuestro podeso de ETL, se agregaron logs. Hicimos uso de la librería logging para crear los registros y os para manejar las rutas en las que se leen y grardan.
 El script engargado de darle manejo a los logs se encuentra en  **config/logger.py***. El logger guarda los mensajes en un archivo dentro de la carpeta 'logs' con nombre `etl_<dataset_name>.log`. Si el archivo o la carpeta no existen, se crean automáticamente.
 
 ### b) Estructuación del proyecto en sistema de archivos
 
+En aras de modularizar el proyecto, decidimo separra los componentes del ETL en carpetas distintas, teniendo una carpeta para las Fases de extracción, transformación y carga, otra para as configuraciones y las utlilidades generales. A continuacón se presenta el diagrama del sistma de carpetas y archivos del proyecto:
+
+```text
+uao_etl/
+├── config/
+├── data/
+│   └── raw/
+├── extract/
+├── load/
+├── notebok/
+├── transform/
+├── utils/
+├── .gitignore
+├── LICENSE
+├── README.md
+├── README_ETL_Windows.md
+├── REPORTE_ETL_COMPLETO.pbix
+├── pipeline.py
+└── requirements.txt
+```
+
+Siendo el archivo **pipeline.py** el encargado de la ejecución de nuestro proceso completo de ETL para los datasets de cobertura de internet, revistas indexadas y grupos de investigación en Colombia.
+
+### c) archivos de configuración
+
+Se dispuso un archivo de configuración en **config/datasets_config.py** de las operaciones que se le realizará a cada dataset así como las rutas en las que se encontrarán los datos antes y después de las trasnformaciones que se le realicen.
+
+Para incluir nuevas fuentes de datos cada dataset debe de tener en su configuración:
+- input (str): indicando la ruta donde está ubicado el archivo.
+- output (str): indicando el nombre de salida del archivo.
+- transformations (Dict[func, args]): listado de transformaciones a aplicar filter_by_year_range.
+  
+Además, cada transformación debe de tener:
+- func (func): función de transformación.
+- args (Dict[str, Any]): argumentos de la transformación.
+
+### d) Procesameinto en paralelo
+
+Mediante la librería concurrent y el módulo ThreadPoolExecutor de futures, implementamos el procesamiento en paralelo de cada uno de los datasets. Esto con el motivo de mejorar el timepo de ejecución de nuestro proceso de ETL. En nuestro caso se hace uso de cuatro hilos debido a que tenemos este numero de datasets a procesar, a cada uno de ellos de le asigna un hilo diferente. Las operciones sobre cada dataset se hace de forma secuencial debido a que existen operaciones que tienen dependencia de transforaciones anteriores. LA implementación d esta mejora, se encuentra en el archivo **pipeline.py**
 
 ## 5. Visualización de los datos
 
@@ -151,7 +191,7 @@ Finalmente, se tiene la intención de **usar Power BI** para presentar los datos
 
 ---
 
-## 5. Consideraciones Finales
+## 6. Consideraciones Finales
 
 ### Desafíos Encontrados
 - **Inconsistencia en nombres de municipios y departamentos**: Se resolvió mediante normalización y limpieza de strings.
