@@ -184,7 +184,11 @@ Mediante la librería concurrent y el módulo ThreadPoolExecutor de futures, imp
 
 Para visualizar si existe alguna relación entre la cobertura de internet en las diferentes ubicaciones del país y la producción científica, se creó un reporte en Power BI que nos permita ilutrar las tendencias que tenga nuestros datos despues de someterlos al proceso de ETL. Dentro de este reporte se pueden encontrar pestañas que ilustran el comportamiento de la cobertura de internet fijo e internet movil, de la cantidad de grupos de investigación y cantidad de revistas indexadas a través del tiempo, además, podemos encontrar una pestaña adicional en la que se relaciona la cobertura de internet (puntos de acceso a la red) con la cantidad de grupos de investigación y revistas científics indexadas.
 
-Para relacionar nuestras funetes de datos, creamos un modelo semántico en el que se unen nuestros datasets a través de dos tablas de dimensiones, que contienen registros sobre ubicación (departamento y municipio) y se une con nuestros datasets a través de la llave que creamos para este proposito (que se estructura de la forma: código departamento_código municipio) y una tabla de dimensión de tiempo en la que se tienen lso años y los trimestres en lso que ocurrieron los registros de las otras tablas. A continuación 
+Para relacionar nuestras funetes de datos, creamos un modelo semántico en el que se unen nuestros datasets a través de dos tablas de dimensiones, que contienen registros sobre ubicación (departamento y municipio) y se une con nuestros datasets a través de la llave que creamos para este proposito (que se estructura de la forma: código departamento_código municipio) y una tabla de dimensión de tiempo en la que se tienen lso años y los trimestres en lso que ocurrieron los registros de las otras tablas. A continuación se presenta una ilustracion de nuestro modelo semántico:
+
+![Modelo semántico](assets/modelo_semantico.jpeg)
+
+
 **Análisis de los resultados**
 
 - Por departamentos la información obtenida de las bases de datos, podemos concluir que los departamentos principales (Bogotá, Antioquia, Valle del Cauca, Atlántico y Santander) son los que cuentan con mayores (Coberturas fijas, Grupos de investigación y Revistas indexadas) esto alineándose bastante con lo esperado dado que son los departamentos más grande de Colombia.
