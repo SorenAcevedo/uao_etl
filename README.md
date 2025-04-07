@@ -188,7 +188,7 @@ Para relacionar nuestras funetes de datos, creamos un modelo semántico en el qu
 
 ![Modelo semántico](assets/modelo_semantico.jpeg)
 
-Tambipen presentamos algunas capturas de las pestañas incluidas en nuestro reporte:
+También presentamos algunas capturas de las pestañas incluidas en nuestro reporte:
 
 - Compoartamiento de la cobertura de internet fijo a través del tiempo:
   
