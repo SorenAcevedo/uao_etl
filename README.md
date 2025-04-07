@@ -136,11 +136,11 @@ Se incluyeron dos tablas adicionales al modelo de datos:
 ### a) Logs
 
 Con el motivo de dejar registros de la ejecución de nuestro podeso de ETL, se agregaron logs. Hicimos uso de la librería logging para crear los registros y os para manejar las rutas en las que se leen y grardan.
-El script engargado de darle manejo a los logs se encuentra en  **config/logger.py***. El logger guarda los mensajes en un archivo dentro de la carpeta 'logs' con nombre `etl_<dataset_name>.log`. Si el archivo o la carpeta no existen, se crean automáticamente.
+El script encargado de darle manejo a los logs se encuentra en  **config/logger.py***. El logger guarda los mensajes en un archivo dentro de la carpeta 'logs' con nombre `etl_<dataset_name>.log`. Si el archivo o la carpeta no existen, se crean automáticamente.
 
 ### b) Estructuación del proyecto en sistema de archivos
 
-En aras de modularizar el proyecto, decidimo separra los componentes del ETL en carpetas distintas, teniendo una carpeta para las Fases de extracción, transformación y carga, otra para as configuraciones y las utlilidades generales. A continuacón se presenta el diagrama del sistma de carpetas y archivos del proyecto:
+En aras de modularizar el proyecto, decidimos separar los componentes del ETL en carpetas distintas, teniendo una carpeta para las Fases de extracción, transformación y carga, otra para as configuraciones y las utlilidades generales. A continuacón se presenta el diagrama del sistma de carpetas y archivos del proyecto:
 
 ```text
 uao_etl/
@@ -165,7 +165,7 @@ Siendo el archivo **pipeline.py** el encargado de la ejecución de nuestro proce
 
 ### c) archivos de configuración
 
-Se dispuso un archivo de configuración en **config/datasets_config.py** de las operaciones que se le realizará a cada dataset así como las rutas en las que se encontrarán los datos antes y después de las trasnformaciones que se le realicen.
+Se dispuso un archivo de configuración en **config/datasets_config.py** de las operaciones que se le realizará a cada dataset así como las rutas en las que se encontrarán los datos antes y después de las transformaciones que se le realicen.
 
 Para incluir nuevas fuentes de datos cada dataset debe de tener en su configuración:
 - input (str): indicando la ruta donde está ubicado el archivo.
@@ -176,9 +176,9 @@ Además, cada transformación debe de tener:
 - func (func): función de transformación.
 - args (Dict[str, Any]): argumentos de la transformación.
 
-### d) Procesameinto en paralelo
+### d) procesamiento en paralelo
 
-Mediante la librería concurrent y el módulo ThreadPoolExecutor de futures, implementamos el procesamiento en paralelo de cada uno de los datasets. Esto con el motivo de mejorar el timepo de ejecución de nuestro proceso de ETL. En nuestro caso se hace uso de cuatro hilos debido a que tenemos este numero de datasets a procesar, a cada uno de ellos de le asigna un hilo diferente. Las operciones sobre cada dataset se hace de forma secuencial debido a que existen operaciones que tienen dependencia de transforaciones anteriores. LA implementación d esta mejora, se encuentra en el archivo **pipeline.py**
+Mediante la librería concurrent y el módulo ThreadPoolExecutor de futures, implementamos el procesamiento en paralelo de cada uno de los datasets. Esto con el motivo de mejorar el timepo de ejecución de nuestro proceso de ETL. En nuestro caso se hace uso de cuatro hilos debido a que tenemos este numero de datasets a procesar, a cada uno de ellos se le asigna un hilo diferente. Las operciones sobre cada dataset se hace de forma secuencial debido a que existen operaciones que tienen dependencia de transforaciones anteriores. LA implementación d esta mejora, se encuentra en el archivo **pipeline.py**
 
 ## 5. Visualización de los datos
 
