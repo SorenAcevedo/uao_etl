@@ -131,7 +131,20 @@ Se incluyeron dos tablas adicionales al modelo de datos:
 - **Relación con otras tablas**: En las tablas de salida de los cuatro datasets, la columna `COD_MUNICIPIO` se usará para enlazarlas con la tabla de la dimensión de municipios, lo que facilitará consultas y análisis detallados.
 -**Dimensión de tiempo**, en la que se especifica el momento en el que ocurrieron los hechos. Se utilizará una combinación de **año y trimestre** para establecer las relaciones en el modelo de datos.
 
+## 4. Méjoras al código de ETL
+
+### a) Logs
+Con el motivo de dejar registros de la ejecución de nuestro podeso de ETL, se agregaron logs. Hicimos uso de la librería logging para crear los registros y os para manejar las rutas en las que se leen y grardan.
+El script engargado de darle manejo a los logs se encuentra en  **config/logger.py***. El logger guarda los mensajes en un archivo dentro de la carpeta 'logs' con nombre `etl_<dataset_name>.log`. Si el archivo o la carpeta no existen, se crean automáticamente.
+
+### b) Estructuación del proyecto en sistema de archivos
+
+
+## 5. Visualización de los datos
+
 ## ******¡¡¡¡¡Agregar documentación sobre lo que se haga en Power BI Aquí!!!!*****
+
+
 
 
 Finalmente, se tiene la intención de **usar Power BI** para presentar los datos. Para ello, se cargarán las **seis tablas (cuatro de hechos y dos dimensiones)** y, en la pestaña del **modelo semántico**, se establecerán las relaciones correspondientes para facilitar el análisis.
